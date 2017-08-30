@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 load_dotenv(find_dotenv())
 # SOCIAL AUTH  AUTH0 BACKEND CONFIG
 SOCIAL_AUTH_AUTH0_KEY = os.environ['AUTH0_CLIENT_ID']
-SOCIAL_AUTH_AUTH0_SECRET = os.environ['AUTH0_CLIENT_ID']
+SOCIAL_AUTH_AUTH0_SECRET = os.environ['AUTH0_CLIENT_SECRET']
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
     'profile'
