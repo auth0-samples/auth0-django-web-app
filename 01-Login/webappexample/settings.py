@@ -123,15 +123,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-load_dotenv(find_dotenv())
+ENV_FILE = find_dotenv()
+if ENV_FILE:
+    load_dotenv(ENV_FILE)
+
 # SOCIAL AUTH  AUTH0 BACKEND CONFIG
-SOCIAL_AUTH_AUTH0_KEY = os.environ['AUTH0_CLIENT_ID']
-SOCIAL_AUTH_AUTH0_SECRET = os.environ['AUTH0_CLIENT_SECRET']
+SOCIAL_AUTH_AUTH0_KEY = os.environ.get('AUTH0_CLIENT_ID')
+SOCIAL_AUTH_AUTH0_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
     'profile'
 ]
-SOCIAL_AUTH_AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
+SOCIAL_AUTH_AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 
 AUTHENTICATION_BACKENDS = {
     'auth0login.auth0backend.Auth0',
