@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+from dotenv import load_dotenv, find_dotenv
+
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -121,18 +123,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+load_dotenv(find_dotenv())
 # SOCIAL AUTH  AUTH0 BACKEND CONFIG
-SOCIAL_AUTH_AUTH0_KEY = 'KmI9NaqobMHGoibClLTEKUX_8ojgyM9P'
-SOCIAL_AUTH_AUTH0_SECRET = '5UEawfwEmdKenKlE_EudcF5wPCXR0gzIGwqp9NZJSZUbFTz2Omv_3dni3JQtGcla'
-SOCIAL_AUTH_AUTH0_NAMESPACE = 'social'
+SOCIAL_AUTH_AUTH0_KEY = os.environ['AUTH0_CLIENT_ID']
+SOCIAL_AUTH_AUTH0_SECRET = os.environ['AUTH0_CLIENT_ID']
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
     'profile'
 ]
-SOCIAL_AUTH_AUTH0_DOMAIN = 'aluque.auth0.com'
-SOCIAL_AUTH_AUTH0_AUTHORIZATION_URL = 'https://aluque.auth0.com/authorize'
-SOCIAL_AUTH_AUTH0_ACCESS_TOKEN_URL = 'https://aluque.auth0.com/oauth/token'
+SOCIAL_AUTH_AUTH0_DOMAIN = os.environ['AUTH0_DOMAIN']
 
 AUTHENTICATION_BACKENDS = {
     'auth0login.auth0backend.Auth0',
