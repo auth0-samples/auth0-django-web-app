@@ -1,0 +1,5 @@
+django
+social-auth-app-django
+python-jose
+six
+python-dotenv
