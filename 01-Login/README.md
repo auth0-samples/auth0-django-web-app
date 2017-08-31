@@ -10,7 +10,7 @@ Rename `.env.example` to `.env` and populate it with the client ID, domain, secr
 Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
 Also, add the callback URL to the settings section of your Auth0 client.
 
-Register `http://localhost:8000/callback` as `Allowed Callback URLs` and `http://localhost:8000`
+Register `http://localhost:8000/complete/auth0` as `Allowed Callback URLs` and `http://localhost:8000`
 as `Allowed Logout URLs` in your app settings.
 
 Run `pip install -r requirements.txt` to install the dependencies, then run `python manage.py migrate` to migrate the

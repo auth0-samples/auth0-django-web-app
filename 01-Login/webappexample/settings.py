@@ -128,6 +128,7 @@ if ENV_FILE:
     load_dotenv(ENV_FILE)
 
 # SOCIAL AUTH  AUTH0 BACKEND CONFIG
+SOCIAL_AUTH_TRAILING_SLASH = False
 SOCIAL_AUTH_AUTH0_KEY = os.environ.get('AUTH0_CLIENT_ID')
 SOCIAL_AUTH_AUTH0_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
 SOCIAL_AUTH_AUTH0_SCOPE = [
@@ -135,7 +136,9 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
     'profile'
 ]
 SOCIAL_AUTH_AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
-
+AUDIENCE = os.environ.get('AUTH0_AUDIENCE')
+if AUDIENCE:
+    SOCIAL_AUTH_AUTH0_AUTH_EXTRA_ARGUMENTS = {'audience': AUDIENCE}
 AUTHENTICATION_BACKENDS = {
     'auth0login.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend'
