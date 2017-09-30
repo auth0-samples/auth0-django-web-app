@@ -2,34 +2,34 @@
 
 This sample demonstrates how to add authentication to a Django web app using Auth0.
 
+Check the [Django Quickstart](https://auth0.com/docs/quickstart/webapp/django) to better understand this sample.
+
 # Running the App
 
-To run the sample, make sure you have `python`, `pip` installed.
+To run the application, make sure you have `python`, `pip` installed.
 
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret and audience for your
-Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
-Also, add the callback URL to the settings section of your Auth0 client.
+Rename `.env.example` to `.env` and populate it with the client ID, domain, secret.
 
 Register `http://localhost:8000/complete/auth0` as `Allowed Callback URLs` and `http://localhost:8000`
 as `Allowed Logout URLs` in your app settings.
 
-Run `pip install -r requirements.txt` to install the dependencies, then run `python manage.py migrate` to migrate the
-database and `python manage.py runserver 8000` to run the server.
+Once you've set those variables:
+
+1. Install the needed dependencies with `pip install -r requirements.txt`
+2. Run `python manage.py migrate` to migrate the database schema
+3. Run `python manage.py runserver 8000` to run the server.
+
 The app will be served at [http://localhost:8000/](http://localhost:8000/).
 
 # Running the App with Docker
 
-To run the sample, make sure you have `docker` installed.
+To run the sample with `docker`:
 
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret, callback URL and audience for your
-Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
-Also, add the callback URL to the settings section of your Auth0 client.
-
-Register `http://localhost:8000/complete/auth0/` as `Allowed Callback URLs` and `http://localhost:8000`
-as `Allowed Logout URLs` in your app settings.
-
-Run `sh exec.sh` to build and run the docker image in Linux or run `.\exec.ps1` to build and run the docker image 
+1. Rename the `.env.example` file to `.env`, change the environment variables, and register the URLs as explained [previously](#running-the-app).
+2. Run `sh exec.sh` to build and run the docker image in Linux or run `.\exec.ps1` to build and run the docker image 
 on Windows.
+
+The app will be served at [http://localhost:8000/](http://localhost:8000/).
 
 ## What is Auth0?
 

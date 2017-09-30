@@ -2,6 +2,8 @@
 
 This sample demonstrates how to add authentication to a Django web app using Auth0.
 
+Check the [Django Quickstart](https://auth0.com/docs/quickstart/webapp/django) to better understand this sample.
+
 ## What is Auth0?
 
 Auth0 helps you to:
