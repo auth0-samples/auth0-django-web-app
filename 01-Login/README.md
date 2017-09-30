@@ -6,11 +6,11 @@ Check the [Django Quickstart](https://auth0.com/docs/quickstart/webapp/django) t
 
 # Running the App
 
-To run the application, make sure you have `python`, `pip` installed.
+To run the application:
 
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret.
-
-Register `http://localhost:8000/complete/auth0` as `Allowed Callback URLs` and `http://localhost:8000`
+1. Make sure you have `python`, `pip` installed.
+2. Rename `.env.example` to `.env` and populate it with the client ID, domain, secret.
+3. Register `http://localhost:8000/complete/auth0` as `Allowed Callback URLs` and `http://localhost:8000`
 as `Allowed Logout URLs` in your app settings.
 
 Once you've set those variables:
