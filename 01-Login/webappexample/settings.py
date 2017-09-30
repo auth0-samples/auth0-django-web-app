@@ -136,7 +136,12 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
     'profile'
 ]
 SOCIAL_AUTH_AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
-AUDIENCE = os.environ.get('AUTH0_AUDIENCE')
+AUDIENCE = None
+if os.environ.get('AUTH0_AUDIENCE'):
+    AUDIENCE = os.environ.get('AUTH0_AUDIENCE')
+else:
+    if SOCIAL_AUTH_AUTH0_DOMAIN:
+        AUDIENCE = 'https://' + SOCIAL_AUTH_AUTH0_DOMAIN + '/userinfo'
 if AUDIENCE:
     SOCIAL_AUTH_AUTH0_AUTH_EXTRA_ARGUMENTS = {'audience': AUDIENCE}
 AUTHENTICATION_BACKENDS = {
