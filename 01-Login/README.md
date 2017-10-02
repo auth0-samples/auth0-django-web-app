@@ -19,17 +19,10 @@ The app will be served at [http://localhost:8000/](http://localhost:8000/).
 
 # Running the App with Docker
 
-To run the sample, make sure you have `docker` installed.
+In order to run the sample with [Docker](https://www.docker.com/) you need to add client ID, domain, secret and audience to `.env` file as explained [previously](#running-the-app)
 
-Rename `.env.example` to `.env` and populate it with the client ID, domain, secret, callback URL and audience for your
-Auth0 app. If you are not implementing any API you can use `https://YOUR_DOMAIN.auth0.com/userinfo` as the audience.
-Also, add the callback URL to the settings section of your Auth0 client.
-
-Register `http://localhost:8000/complete/auth0/` as `Allowed Callback URLs` and `http://localhost:8000`
-as `Allowed Logout URLs` in your app settings.
-
-Run `sh exec.sh` to build and run the docker image in Linux or run `.\exec.ps1` to build and run the docker image 
-on Windows.
+Execute in command line `sh exec.sh` to build and run the docker image in Linux or `.\exec.ps1` to build and run the docker image 
+in Windows.
 
 ## What is Auth0?
 
