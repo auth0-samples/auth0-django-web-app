@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     url('^$', views.index),
     url(r'^dashboard', views.dashboard),
+    url(r'^logout', views.log_out),
     url(r'^', include('django.contrib.auth.urls', namespace='auth')),
     url(r'^', include('social_django.urls', namespace='social')),
 ]
