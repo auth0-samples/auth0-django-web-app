@@ -3,3 +3,5 @@
 .gitignore
 .git
 README.md
+exec.sh
+exec.ps1
