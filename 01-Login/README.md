@@ -9,7 +9,8 @@ Check the [Django Quickstart](https://auth0.com/docs/quickstart/webapp/django) t
 To run the application:
 
 1. Make sure you have `python`, `pip` installed.
-2. Rename `.env.example` to `.env` and populate it with the client ID, domain, secret.
+2. If needed, rename `.env.example` to `.env`. It may not be needed as the zip file tries to be intelligent about creating `.env`.
+3. Populate `.env` with the client ID, domain, secret for your app, or verify they are correct if already present.
 3. Register `http://localhost:3000/complete/auth0` as `Allowed Callback URLs` and `http://localhost:3000`
 as `Allowed Logout URLs` in your app settings.
 
