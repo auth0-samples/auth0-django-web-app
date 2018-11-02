@@ -1,9 +1,9 @@
-from django.conf.urls import url, include
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    url('^$', views.index),
-    url(r'^dashboard', views.dashboard),
-    url(r'^', include('django.contrib.auth.urls', namespace='auth')),
-    url(r'^', include('social_django.urls', namespace='social')),
+    path('', views.index),
+    path('dashboard/', views.dashboard),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('social_django.urls')),
 ]
