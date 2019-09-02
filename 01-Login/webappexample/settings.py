@@ -133,7 +133,8 @@ SOCIAL_AUTH_AUTH0_KEY = os.environ.get('AUTH0_CLIENT_ID')
 SOCIAL_AUTH_AUTH0_SECRET = os.environ.get('AUTH0_CLIENT_SECRET')
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
-    'profile'
+    'profile',
+    'email'
 ]
 SOCIAL_AUTH_AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 AUDIENCE = None

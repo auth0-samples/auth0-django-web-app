@@ -23,7 +23,8 @@ def dashboard(request):
     userdata = {
         'user_id': auth0user.uid,
         'name': user.first_name,
-        'picture': auth0user.extra_data['picture']
+        'picture': auth0user.extra_data['picture'],
+        'email': auth0user.extra_data['email']
     }
 
     return render(request, 'dashboard.html', {
