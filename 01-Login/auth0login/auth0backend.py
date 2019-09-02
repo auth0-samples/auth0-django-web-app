@@ -8,6 +8,7 @@ class Auth0(BaseOAuth2):
     name = 'auth0'
     SCOPE_SEPARATOR = ' '
     ACCESS_TOKEN_METHOD = 'POST'
+    REDIRECT_STATE = False
     EXTRA_DATA = [
         ('picture', 'picture')
     ]
