@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout as log_out
 from django.conf import settings
@@ -9,7 +9,11 @@ import json
 
 
 def index(request):
-    return render(request, 'index.html')
+    user = request.user
+    if user.is_authenticated:
+        return redirect(dashboard)
+    else:
+        return render(request, 'index.html')
 
 
 @login_required
@@ -19,7 +23,8 @@ def dashboard(request):
     userdata = {
         'user_id': auth0user.uid,
         'name': user.first_name,
-        'picture': auth0user.extra_data['picture']
+        'picture': auth0user.extra_data['picture'],
+        'email': auth0user.extra_data['email']
     }
 
     return render(request, 'dashboard.html', {

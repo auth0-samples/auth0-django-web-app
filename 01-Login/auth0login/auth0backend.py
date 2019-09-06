@@ -8,8 +8,10 @@ class Auth0(BaseOAuth2):
     name = 'auth0'
     SCOPE_SEPARATOR = ' '
     ACCESS_TOKEN_METHOD = 'POST'
+    REDIRECT_STATE = False
     EXTRA_DATA = [
-        ('picture', 'picture')
+        ('picture', 'picture'),
+        ('email', 'email')
     ]
 
     def authorization_url(self):
@@ -29,8 +31,8 @@ class Auth0(BaseOAuth2):
         issuer = 'https://' + self.setting('DOMAIN') + '/'
         audience = self.setting('KEY')  # CLIENT_ID
         payload = jwt.decode(id_token, jwks.read(), algorithms=['RS256'], audience=audience, issuer=issuer)
-
         return {'username': payload['nickname'],
                 'first_name': payload['name'],
                 'picture': payload['picture'],
-                'user_id': payload['sub']}
+                'user_id': payload['sub'],
+                'email': payload['email']}
