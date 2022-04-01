@@ -19,7 +19,6 @@ oauth.register(
 
 
 def index(request):
-    print(request.session)
 
     return render(
         request,
