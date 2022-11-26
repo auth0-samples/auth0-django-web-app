@@ -1,4 +1,4 @@
-authlib ~= 1.0
+authlib ~= 1.1
 django ~= 4.1
 python-dotenv ~= 0.21
 requests ~= 2.28
